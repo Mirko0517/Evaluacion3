@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="Width=device_width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+
+</head>
+<body>
+<div class="container">
+    <h1>Formulario de Notas</h1>
+    <form action="/formularionotas" method="post">
+        <label for="numero1">Nota 1:</label>
+        <input type="number" id="numero1" name="numero1" required>
+        <br>
+        <label for="numero2">Nota 2:</label>
+        <input type="number" id="numero2" name="numero2" required>
+        <br>
+         <label for="numero3">Nota 3:</label>
+        <input type="number" id="numero3" name="numero3" required>
+        <br>
+        <label for="numero4">Asistencia (%):</label>
+        <input type="number" id="numero4" name="numero4" required>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+    {% if notas %}
+    <h2>Notas ingresadas:</h2>
+    <ul>
+        <li>Nota 1: {{ notas.nota1 }}</li>
+        <li>Nota 2: {{ notas.nota2 }}</li>
+        <li>Nota 3: {{ notas.nota3 }}</li>
+    </ul>
+    <h2>Asistencia:</h2>
+    <p>{{ notas.asistencia }}%</p>
+    <h2>Promedio:</h2>
+    <p>{{ notas.promedio }}</p>
+    <h2>Estado:</h2>
+    <p>{{ notas.estado }}</p>
+{% endif %}
+
+
+</div>
+</body>
+</html>
